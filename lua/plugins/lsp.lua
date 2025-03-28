@@ -132,6 +132,13 @@ return {
 						},
 					},
 				},
+				clangd = {
+					cmd = { "clangd" },
+					filetypes = { "c", "cpp", "objc", "objcpp" },
+					root_dir = function(...)
+						return require("lspconfig.util").root_pattern("compile_commands.json", ".git")(...)
+					end,
+				},
 			},
 			setup = {},
 		},
