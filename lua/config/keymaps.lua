@@ -58,6 +58,11 @@ keymap.set("n", "<C-w><right>", "<C-w>>")
 keymap.set("n", "<C-w><up>", "<C-w>+")
 keymap.set("n", "<C-w><down>", "<C-w>-")
 
+-- Manually trigger signature help
+vim.keymap.set("n", "<C-z>", function()
+	vim.lsp.buf.signature_help()
+end, { desc = "Show function signature help" })
+
 -- Diagnostics
 keymap.set("n", "<C-j>", function()
 	vim.diagnostic.goto_next()
